@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Shape-to-STL Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Import‑map so “three” resolves inside loader / exporter modules -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header><h1>Shape-to-STL Generator</h1></header>
+
+    <main class="layout">
+      <div class="viewer-box">
+        <canvas id="viewer" width="640" height="480"></canvas>
+      </div>
+
+      <aside class="controls">
+        <label class="control-block"
+          >Units
+          <select id="units">
+            <option value="mm">millimetres</option>
+            <option value="cm">centimetres</option>
+            <option value="in">inches</option>
+          </select>
+        </label>
+
+        <label class="control-block"
+          >Shape
+          <select id="shape">
+            <option value="cube">Cube</option>
+            <option value="prism">Rectangular Prism</option>
+            <option value="cylinder">Cylinder</option>
+            <option value="pyramid">Pyramid</option>
+            <option value="sphere">Sphere</option>
+          </select>
+        </label>
+
+        <div id="params"></div>
+
+        <button id="download">Download STL</button>
+      </aside>
+    </main>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
